@@ -15,7 +15,6 @@ exports.recognize = async data => {
   try {
     let formData = new FormData();
     console.log("data", typeof data, data.length);
-    console.dir(Buffer.isBuffer(data));
     formData.append("upload2", data, { filename: "plate.jpg" });
 
     let options = {
@@ -40,7 +39,7 @@ exports.recognize = async data => {
       json: true
     };
     let result = await request(options);
-    console.log("result: ", result, typeof result);
+    // console.log("result: ", result, typeof result);
     return result;
   } catch (error) {
     console.log("recognize exception: ", JSON.stringify(error, null, 4));

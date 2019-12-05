@@ -39,7 +39,6 @@ const init = async () => {
     path: "/proxy/{proxy_url*}",
     handler: async (request, h) => {
       console.log("proxy_url", JSON.stringify(request.params.proxy_url));
-      console.log("upload: ", typeof request.payload.upload);
       let result = recognizer.recognize(request.payload.upload);
       return result;
     }
