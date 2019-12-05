@@ -1,7 +1,7 @@
 module.exports = {
   apps: [
     {
-      name: "proxy",
+      name: "corsproxy",
       script: "app.js",
       // Options reference: https://pm2.io/doc/en/runtime/reference/ecosystem-file/
       // args: 'one two',
@@ -11,8 +11,8 @@ module.exports = {
       out_file: "../logs/stdout.log",
       // max_memory_restart: '1G',
       env: {
-        watch: true
-        // NODE_ENV: 'production',
+        watch: true,
+        NODE_ENV: "production"
         // DEBUG: 'winepoint:*,express:*',
       }
     }
@@ -25,8 +25,8 @@ module.exports = {
       user: "ubuntu",
       ref: "origin/master",
       repo: "git@github.com:librorum/corsproxy.git",
-      path: "/home/ubuntu/admin",
-      "post-deploy": "yarn install && pm2 reload ecosystem.config.js --env production"
+      path: "/home/ubuntu/corsproxy",
+      "post-deploy": "yarn install && pm2 reload ecosystem.config.js"
     }
   }
 };

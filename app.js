@@ -17,7 +17,7 @@ const init = async () => {
         additionalHeaders: ["cache-control", "x-requested-with"],
         headers: ["Accept", "Authorization", "Content-Type", "If-None-Match", "Accept-language"]
       }
-ou    }
+    }
   });
 
   await server.start();
